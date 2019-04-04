@@ -22,3 +22,24 @@ body {
   padding: 2% 24px;
   box-sizing: border-box;
 }
+.navbar-list {
+  display: flex;
+  margin: 60px 0;
+}
+.navbar-item a {
+  margin-right: 32px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #333;
+}
+.container > div:first-child > p:first-child {
+  font-size: 64px;
+  line-height: 72px;
+}
+.container > div:first-child > p:nth-child(2) {
+  color: #666;
+  font-family: 'GoogleSansRegular', sans-serif;
+  margin: 24px 12px;
+}

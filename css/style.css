@@ -1,0 +1,24 @@
+@font-face {
+  font-family: GoogleSansBold;
+  src: url(../font/GoogleSans-Bold.ttf);
+}
+
+@font-face {
+font-family: GoogleSansRegular;
+src: url(../font/GoogleSans-Regular.ttf);
+}
+body {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: 'GoogleSansBold', sans-serif;
+  color: #333;
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2% 24px;
+  box-sizing: border-box;
+}

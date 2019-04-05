@@ -43,3 +43,18 @@ body {
   font-family: 'GoogleSansRegular', sans-serif;
   margin: 24px 12px;
 }
+.text-animation {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    	to right,
+	    #333,
+	    #333 50%,
+	    #4a90e2 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+}
+.text-animation:hover {
+  transition: all 0.5s cubic-bezier(0.000, 0.000, 0.230, 1);
+  background-position: 0%;
+}

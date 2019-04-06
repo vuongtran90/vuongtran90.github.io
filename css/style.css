@@ -13,6 +13,11 @@ body {
   font-weight: 400;
   font-family: 'GoogleSansBold', sans-serif;
   color: #333;
+  background-image: url('../images//bg-pattern.svg');
+  background-position: 100% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed
 }
 .wrapper {
   position: relative;
@@ -32,7 +37,10 @@ body {
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: bold;
-  color: #333;
+  color: #a29ab4;
+}
+.container > div:first-child {
+  margin: 15% 0;
 }
 .container > div:first-child > p:first-child {
   font-size: 64px;
@@ -41,7 +49,7 @@ body {
 .container > div:first-child > p:nth-child(2) {
   color: #666;
   font-family: 'GoogleSansRegular', sans-serif;
-  margin: 24px 12px;
+  margin: 32px 0;
 }
 .text-animation {
   -webkit-background-clip: text;
@@ -50,11 +58,56 @@ body {
     	to right,
 	    #333,
 	    #333 50%,
-	    #4a90e2 50%);
+	    #cca8e3 50%);
   background-size: 200% 100%;
   background-position: 100%;
 }
 .text-animation:hover {
   transition: all 0.5s cubic-bezier(0.000, 0.000, 0.230, 1);
   background-position: 0%;
+}
+.projects > a {
+  position: relative;
+  display: block;
+  margin-bottom: 56px;
+  padding: 24px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 10px 25px -10px rgba(72, 29, 99, .3);
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  font-family: 'GoogleSansRegular', sans-serif;
+}
+.projects > a:hover {
+  border: 2px solid #cca8e3;
+  background-color: #fff;
+  -webkit-transform: translate(0px, -3px);
+  -ms-transform: translate(0px, -3px);
+  transform: translate(0px, -3px);
+}
+.project-date {
+  color: #cca8e3;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+.project-title {
+  font-family: 'GoogleSansBold', sans-serif;
+  color: #333;
+  letter-spacing: 1px;
+  margin: 8px 0;
+}
+.project-description {
+  color: #666;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  line-height: 1.75;
+}
+.footer {
+  margin: 15% 0 10%;
+}
+.footer a {
+  color: #cca8e3;
+  text-decoration: underline;
 }

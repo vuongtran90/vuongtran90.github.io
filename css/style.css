@@ -1,113 +1,64 @@
 @font-face {
-  font-family: GoogleSansBold;
-  src: url(../font/GoogleSans-Bold.ttf);
+  font-family: MaisonNeueLight;
+  src: url(../font/MaisonNeue-Light.ttf);
 }
-
 @font-face {
-font-family: GoogleSansRegular;
-src: url(../font/GoogleSans-Regular.ttf);
+  font-family: MaisonNeueBook;
+  src: url(../font/MaisonNeue-Book.ttf);
 }
-body {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  font-weight: 400;
-  font-family: 'GoogleSansBold', sans-serif;
-  color: #333;
-  background-image: url('../images//bg-pattern.svg');
-  background-position: 100% 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed
+@font-face {
+  font-family: MaisonNeueBold;
+  src: url(../font/MaisonNeue-Bold.ttf);
 }
-.wrapper {
-  position: relative;
+html {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  }
+html, body {
+  background: #121212;
+  margin:0;
+  padding: 0;
+  color: #fff;
   width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2% 24px;
-  box-sizing: border-box;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font: 30px/1.5 "MaisonNeueLight", sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
-.navbar-list {
+.flex-column {
   display: flex;
-  margin: 60px 0;
+  flex-direction: column
 }
-.navbar-item a {
-  margin-right: 32px;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 1px;
-  font-weight: bold;
-  color: #a29ab4;
+.canvas-noise {
+  position:fixed;
+  background: #121212;
 }
-.container > div:first-child {
-  margin: 15% 0;
+canvas {
+  position: fixed;
+  width: 100%;
 }
-.container > div:first-child > p:first-child {
-  font-size: 64px;
-  line-height: 72px;
-}
-.container > div:first-child > p:nth-child(2) {
-  color: #666;
-  font-family: 'GoogleSansRegular', sans-serif;
-  margin: 32px 0;
-}
-.text-animation {
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(
-    	to right,
-	    #333,
-	    #333 50%,
-	    #cca8e3 50%);
-  background-size: 200% 100%;
-  background-position: 100%;
-}
-.text-animation:hover {
-  transition: all 0.5s cubic-bezier(0.000, 0.000, 0.230, 1);
-  background-position: 0%;
-}
-.projects > a {
+.container {
   position: relative;
-  display: block;
-  margin-bottom: 56px;
-  padding: 24px;
-  border: 2px solid transparent;
-  border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 0 10px 25px -10px rgba(72, 29, 99, .3);
-  -webkit-transition: all 250ms ease-in-out;
-  transition: all 250ms ease-in-out;
-  font-family: 'GoogleSansRegular', sans-serif;
+  padding: 10% 0;
+  width: 90%;
+  max-width: 640px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
-.projects > a:hover {
-  border: 2px solid #cca8e3;
-  background-color: #fff;
-  -webkit-transform: translate(0px, -3px);
-  -ms-transform: translate(0px, -3px);
-  transform: translate(0px, -3px);
-}
-.project-date {
-  color: #cca8e3;
+.container > div > span {
+  font: 10px "MaisonNeueLight";
+  letter-spacing: .2rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 14px;
+  margin: 80px 0 30px;
 }
-.project-title {
-  font-family: 'GoogleSansBold', sans-serif;
-  color: #333;
-  letter-spacing: 1px;
-  margin: 8px 0;
+.container > div a {
+  color: #fff;
 }
-.project-description {
-  color: #666;
-  font-size: 16px;
-  letter-spacing: 0.3px;
-  line-height: 1.75;
+.about h2 {
+  /* font: 40px "MaisonNeueBook"; */
 }
-.footer {
-  margin: 15% 0 10%;
-}
-.footer a {
-  color: #cca8e3;
+.about a,
+.contact a {
   text-decoration: underline;
 }

@@ -35,3 +35,4 @@ var toggle = false;
   noise(ctx);
   requestAnimationFrame(loop);
 })();
+

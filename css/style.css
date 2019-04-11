@@ -131,28 +131,28 @@ canvas {
   -webkit-animation-delay: 0s;
 }
 .animated-2nd {
-  animation-delay: 0.2s;
-  -webkit-animation-delay: 0.2s;
-}
-.animated-3rd {
-  animation-delay: 0.3s;
-  -webkit-animation-delay: 0.3s;
-}
-.animated-4th {
-  animation-delay: 0.4s;
-  -webkit-animation-delay: 0.4s;
-}
-.animated-5th {
   animation-delay: 0.5s;
   -webkit-animation-delay: 0.5s;
 }
-.animated-6th {
+.animated-3rd {
   animation-delay: 0.6s;
   -webkit-animation-delay: 0.6s;
 }
-.animated-7th {
+.animated-4th {
   animation-delay: 0.7s;
   -webkit-animation-delay: 0.7s;
+}
+.animated-5th {
+  animation-delay: 0.8s;
+  -webkit-animation-delay: 0.8s;
+}
+.animated-6th {
+  animation-delay: 0.9s;
+  -webkit-animation-delay: 0.9s;
+}
+.animated-7th {
+  animation-delay: 1s;
+  -webkit-animation-delay: 1s;
 }
 @keyframes underlineWidth {
   0% {
@@ -176,8 +176,6 @@ canvas {
   animation-name: underlineWidth;
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
-  animation-delay: 0.6s;
-  -webkit-animation-delay: 0.6s;
 }
 @keyframes blackIn {
   0% {

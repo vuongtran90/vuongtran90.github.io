@@ -2,15 +2,6 @@
   font-family: MaisonNeueLight;
   src: url(../font/MaisonNeue-Light.ttf);
 }
-
-/* @font-face {
-  font-family: MaisonNeueBook;
-  src: url(../font/MaisonNeue-Book.ttf);
-}
-@font-face {
-  font-family: MaisonNeueBold;
-  src: url(../font/MaisonNeue-Bold.ttf);
-} */
 html {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
@@ -19,11 +10,10 @@ html {
   scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
-  width: 0px;  /* Remove scrollbar space */
-  background: transparent;  /* Optional: just make scrollbar invisible */
+  width: 0px;
+  background: transparent;
 }
 html, body {
-  /* background: #121212; */
   margin:0;
   padding: 0;
   color: #fff;
@@ -56,7 +46,7 @@ canvas {
   position: relative;
   padding: 10% 0;
   width: 90%;
-  max-width: 640px;
+  max-width: 800px;
   box-sizing: border-box;
   margin: 0 auto;
 }
@@ -64,65 +54,70 @@ canvas {
   font: 10px "MaisonNeueLight";
   letter-spacing: 6px;
   text-transform: uppercase;
-  margin: 80px 0 30px;
+  margin: 10% 0 5%;
 }
 .container > div a {
   color: #fff;
-  padding: 2px;
+  padding: 4px;
 }
 .container > .about h2 {
-  font-size: 40px;
+  font-size: 32px;
 }
 .container > .portfolio li {
-  margin-bottom: 16px;
+  margin-bottom: 3%;
   overflow: hidden;
 }
+.container > .portfolio li span {
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
 .underline {
-  /* ["#6a11cb", "#2575fc"] */
-  background-image: linear-gradient(120deg, #fff 0%, #fff 100%);
+  background-image: linear-gradient(120deg, rgba(102,126,234,0.3) 0%, rgba(108,75,162,0.75) 100%);
   background-repeat: no-repeat;
   background-size: 100% 1px;
-  background-position: 0 100%;
+  background-position: 0 88%;
   transition: background-size 0.25s;
-  /* transition: background-size 0.15s ease-in; */
 }
 .underline:hover {
   background-size: 100% 100%;
-  color: #000
-}
-.color {
-  color: #ff8177, #ff867a, #ff8c7f, #f99185, #cf556c, #b12a5b; /* Young passion */
-  color: #ff9a9e, #fad0c4; /* warm flame */
-  color: #43e97b, #38f9d7; /* new line */
-  color: #84fab0, #8fd3f4; /* azure */
-  color: #f093fb, #f5576c; /* ripeMalinka */
-  color: #fa709a, #fee140; /* true sunset */
-  color: #667eea, #764ba2; /* plumPlate */ /* current */
-  color: #2af598, #009efd; /* itmeoBranding */
-  color: #6a11cb, #2575fc; /* deepBlue */
-  color: #3f51b1, #5a55ae, #7b5fac, #8f6aae, #a86aa4, #cc6b8e, #f18271, #f3a469, #f7c978 /* sweetPeriod */
 }
 
+/* RESPONSIVE */
+@media only screen and (max-width: 500px) {
+  html, body {
+    font-size: 20px;
+  }
+  .container > .about h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 452px) {
+  .container > .about h2 {
+    font-size: 24px;
+  }
+  .container > div a {
+    padding: 4px 0;
+  }
+  .container > div > span {
+    letter-spacing: 5px;
+  }
+}
+@media only screen and (max-width: 452px) {
+  html, body {
+    font-size: 18px;
+  }
+  .container > div > span {
+    letter-spacing: 3px;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .container > .portfolio li span {
+    display: block;
+  }
+}
 /* ANIMATION */
-
-.animated {
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-}
-@-webkit-keyframes blackIn {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-.blackIn {
-  -webkit-animation-name: blackIn;
-  animation-name: blackIn;
-}
 .animated {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
@@ -144,6 +139,27 @@ canvas {
 .animated-4th {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
+}
+@keyframes blackIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes blackIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.blackIn {
+  -webkit-animation-name: blackIn;
+  animation-name: blackIn;
 }
 @-webkit-keyframes fadeInDown {
   0% {

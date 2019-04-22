@@ -127,28 +127,28 @@ canvas {
   animation-timing-function: ease-in-out;
 }
 .animated-1st {
-  animation-delay: 0s;
-  -webkit-animation-delay: 0s;
+  animation-delay: 1s;
+  -webkit-animation-delay: 1s;
 }
 .animated-2nd {
-  animation-delay: 0.5s;
-  -webkit-animation-delay: 0.5s;
+  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s;
 }
 .animated-3rd {
-  animation-delay: 0.6s;
-  -webkit-animation-delay: 0.6s;
+  animation-delay: 1.6s;
+  -webkit-animation-delay: 1.6s;
 }
 .animated-4th {
-  animation-delay: 0.7s;
-  -webkit-animation-delay: 0.7s;
+  animation-delay: 1.7s;
+  -webkit-animation-delay: 1.7s;
 }
 .animated-5th {
-  animation-delay: 0.8s;
-  -webkit-animation-delay: 0.8s;
+  animation-delay: 1.8s;
+  -webkit-animation-delay: 1.8s;
 }
 .animated-6th {
-  animation-delay: 0.9s;
-  -webkit-animation-delay: 0.9s;
+  animation-delay: 1.9s;
+  -webkit-animation-delay: 1.9s;
 }
 .animated-7th {
   animation-delay: 1s;

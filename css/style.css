@@ -151,8 +151,8 @@ canvas {
   -webkit-animation-delay: 1.9s;
 }
 .animated-7th {
-  animation-delay: 1s;
-  -webkit-animation-delay: 1s;
+  animation-delay: 2s;
+  -webkit-animation-delay: 2s;
 }
 @keyframes underlineWidth {
   0% {

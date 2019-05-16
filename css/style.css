@@ -23,6 +23,7 @@ html, body {
   text-size-adjust: 100%;
   font: 24px/1.5 "MaisonNeueLight", sans-serif;
   -webkit-tap-highlight-color: transparent;
+  cursor: default;
 }
 .flex-column {
   display: flex;
@@ -82,6 +83,7 @@ canvas {
 }
 .underline:hover {
   background-size: 100% 100%;
+  cursor: url(../images/hand.png),pointer !important;
 }
 
 /* RESPONSIVE */

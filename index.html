@@ -217,18 +217,14 @@
     <script>
       const changeBackgroundColor = () => {
         var container = document.querySelector("body");
-        setTimeout(function () {
+        setTimeout(() => {
           container.style.backgroundColor = "#0a0a0a";
         }, 1000);
       };
-      if (document.readyState == "complete") {
+      if (document.readyState === "complete") {
         changeBackgroundColor();
       } else {
-        document.onreadystatechange = function () {
-          if (document.readyState === "complete") {
-            changeBackgroundColor();
-          }
-        };
+        document.addEventListener("DOMContentLoaded", changeBackgroundColor);
       }
     </script>
   </body>

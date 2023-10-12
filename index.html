@@ -215,10 +215,21 @@
       }
     </script>
     <script async>
-      var container = document.querySelector("body");
-      setInterval(function () {
-        container.style.backgroundColor = "#0a0a0a";
-      }, 1000);
+      const changeBackgroundColor = () => {
+        var container = document.querySelector("body");
+        setInterval(function () {
+          container.style.backgroundColor = "#0a0a0a";
+        }, 1000);
+      };
+      if (document.readyState == "complete") {
+        changeBackgroundColor();
+      } else {
+        document.onreadystatechange = function () {
+          if (document.readyState === "complete") {
+            changeBackgroundColor();
+          }
+        };
+      }
     </script>
   </body>
 </html>

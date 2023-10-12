@@ -21,7 +21,7 @@
   </head>
   <body>
     <div class="dark-background blackIn animated animated-1st"></div>
-    <div class="container dark-background blackIn animated animated-1st">
+    <div class="container">
       <div class="profile">
         <div class="fadeInDown animated animated-2nd">
           <img src="./images/profile_img.png" alt="Vuong Tran Front End Developer Profile Picture" />
@@ -222,6 +222,12 @@
         "url": "https://vuongtran.co",
         "sameAs": ["https://www.linkedin.com/in/vuongtran90/", "https://github.com/vuongtran90"]
       }
+    </script>
+    <script>
+      var container = document.querySelector("body");
+      setTimeout(function () {
+        container.style.backgroundColor = "#0a0a0a";
+      }, 1000);
     </script>
   </body>
 </html>

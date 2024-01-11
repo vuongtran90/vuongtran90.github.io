@@ -126,7 +126,8 @@ body {
   font-weight: 500;
 }
 .projects > a,
-.work > a {
+.work > a,
+.work > div {
   display: flex;
   gap: 1rem;
   padding: 1rem 1rem 0;
@@ -136,8 +137,14 @@ body {
     background: #171717;
   }
 }
+.work > div {
+  &:hover {
+    cursor: not-allowed;
+  }
+}
 .projects > a:last-child .info,
-.work > a:last-child .info {
+.work > a:last-child .info,
+.work > div:last-child .info  {
   border-bottom: none;
 }
 .projects .info > div.description,

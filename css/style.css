@@ -119,8 +119,8 @@ body {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-.projects > h3,
-.work > h3 {
+.projects > h2,
+.work > h2 {
   margin-bottom: 0.5rem;
   color: #a3a3a3;
   font-weight: 500;

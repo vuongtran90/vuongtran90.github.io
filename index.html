@@ -94,12 +94,39 @@
       .profile .title { font-size: 0.875rem }
       .profile .location { margin-left: -0.25rem; font-size: 0.875rem; color: #8a8a8a; display: flex; align-items: center; }
       .profile .location .icon { margin-right: 0.25rem }
-      .profile img {
+      .profile-image-wrapper {
+        position: relative;
         height: 4.5rem;
         width: 4.5rem;
         border-radius: 50%;
+        overflow: hidden;
         margin-right: 1rem;
         border: 5px solid rgb(139 139 139 / 20%);
+        flex-shrink: 0;
+      }
+      .profile-image-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 30%;
+        left: 14px;
+        right: 0;
+        width: 35px;
+        height: 40%;
+        image-rendering: pixelated;
+        background-image: url('./images/pixel-glasses.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(-180%);
+        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      .profile-image-wrapper:hover::after {
+        transform: translate(-4px, -5px) rotate(-9deg);
+      }
+      .profile img {
+        width: 100%;
+        height: 100%;
+        display: block;
       }
       .blob {
         display: inline-block;
@@ -167,7 +194,7 @@
         border-radius: 0.75rem;
         &:hover { background: #171717; }
       }
-      .work > div { &:hover { cursor: not-allowed; } }
+      .work > div { &:hover { cursor: default; } }
       .projects > a:last-child .info,
       .work > a:last-child .info,
       .work > div:last-child .info { border-bottom: none; }

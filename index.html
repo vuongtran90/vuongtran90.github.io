@@ -16,6 +16,7 @@
     <meta property="og:url" content="http://vuongtran.co" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" type="image/x-icon" href="/images/icon.png" />
+    <link rel="preload" href="./images/profile_img.webp" as="image" type="image/webp" />
     <link rel="preload" href="./font/Inter.woff2" as="font" type="font/woff2" crossorigin />
     <style>
       html, body, div, span, applet, object, iframe,
@@ -294,7 +295,7 @@
           <picture>
             <source srcset="./images/profile_img.webp" type="image/webp">
             <source srcset="./images/profile_img.png" type="image/png">
-            <img src="./images/profile_img.png"  alt="Vuong Tran Front End Engineer Profile Picture" width="140" height="144">
+            <img src="./images/profile_img.png" alt="Vuong Tran Front End Engineer Profile Picture" width="140" height="144" fetchpriority="high">
           </picture>
         </div>
         <div>

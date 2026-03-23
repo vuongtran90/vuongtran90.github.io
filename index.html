@@ -90,9 +90,10 @@
         font-size: 1rem;
         color: #a3a3a3;
       }
-      .profile .name { line-height: 1.563rem; }
-      .profile .title { margin-bottom: 0.25rem; }
-      .profile .status { font-size: 0.875rem; color: #8a8a8a; display: flex; align-items: center; }
+      .profile .profile-content { line-height: 1.5rem }
+      .profile .title { font-size: 0.875rem }
+      .profile .location { margin-left: -0.25rem; font-size: 0.875rem; color: #8a8a8a; display: flex; align-items: center; }
+      .profile .location .icon { margin-right: 0.25rem }
       .profile img {
         height: 4.5rem;
         width: 4.5rem;
@@ -114,7 +115,7 @@
       .about .name { display: inline-block; font-weight: 600; }
       .about h1 { margin-bottom: 1rem; }
       .about a { border-bottom: 1px solid #ccc; color: #a3a3a3; }
-      .about > p { margin-top: 1rem; color: #a3a3a3; line-height: 1.563rem; }
+      .about > p { margin-top: 1rem; color: #a3a3a3; line-height: 1.5rem; }
       .social { display: flex; margin-top: 1.5rem; margin-left: -0.5rem; }
       .social a {
         color: #a3a3a3;
@@ -291,25 +292,21 @@
   <body>
     <main class="container">
       <div class="profile">
-        <div class="fadeInDown animated animated-1st">
+        <div class="fadeInDown animated animated-1st profile-image-wrapper">
           <picture>
             <source srcset="./images/profile_img.webp" type="image/webp">
-            <source srcset="./images/profile_img.png" type="image/png">
-            <img src="./images/profile_img.png" alt="Vuong Tran Front End Engineer Profile Picture" width="140" height="144" fetchpriority="high">
+            <img src="./images/profile_img.png" alt="Vuong Tran" width="140" height="140" fetchpriority="high">
           </picture>
         </div>
-        <div>
-          <h1 class="fadeInLeft animated animated-1st">
-            <p class="name">Vuong Tran</p>
-            <p class="title">Front End Engineer</p>
-            <p class="status"><span class="blob"></span> Available for new opportunities</p>
-          </h1>
+        <div class="profile-content fadeInLeft animated animated-1st">
+          <h1 class="name">Vuong Tran</h1>
+          <p class="title">Front End Engineer</p>
+          <p class="location"><span class="icon" aria-hidden="true">📍</span> Bangkok, Thailand</p>
         </div>
       </div>
       <div class="about">
         <p class="fadeInRight animated animated-2nd">
-          I'm a Frontend engineer based in Bangkok. <br/>
-          With over 10 years of experience in building high-quality user interfaces and frontend web applications.
+          I'm a Frontend engineer with over 10 years of experience in building high-quality user interfaces and frontend web applications.
         </p>
         <p class="fadeInRight animated animated-3rd">
          Currently working at <a href="https://anymindgroup.com/" target="_blank">AnyMind Group</a>.

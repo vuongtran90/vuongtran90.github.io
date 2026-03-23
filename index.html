@@ -16,8 +16,276 @@
     <meta property="og:url" content="http://vuongtran.co" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" type="image/x-icon" href="/images/icon.png" />
-    <link href="css/reset.css" rel="stylesheet" type="text/css" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="preload" href="./font/Inter.woff2" as="font" type="font/woff2" crossorigin />
+    <style>
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed,
+      figure, figcaption, footer, header, hgroup,
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      article, aside, details, figcaption, figure,
+      footer, header, hgroup, menu, nav, section { display: block; }
+      body { line-height: 1; }
+      ol, ul { list-style: none; }
+      blockquote, q { quotes: none; }
+      blockquote:before, blockquote:after,
+      q:before, q:after { content: ''; content: none; }
+      table { border-collapse: collapse; border-spacing: 0; }
+      a { text-decoration: none; }
+      * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+      @font-face {
+        font-family: Inter;
+        src: url(./font/Inter.woff2) format('woff2'),
+             url(./font/Inter.ttf) format('truetype');
+        font-display: swap;
+      }
+      html {
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased !important;
+        overflow: scroll;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+      ::-webkit-scrollbar { width: 0px; background: transparent; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #0a0a0a;
+        width: 100%;
+        height: 100%;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        font: 1rem "Inter", sans-serif;
+        -webkit-tap-highlight-color: transparent;
+        cursor: default;
+      }
+      .container {
+        position: relative;
+        max-width: 28.75rem;
+        padding: 1.5rem 1.5rem 5rem;
+        box-sizing: border-box;
+        margin: 0 auto;
+      }
+      .profile {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        color: #a3a3a3;
+      }
+      .profile .name { line-height: 1.563rem; }
+      .profile .title { margin-bottom: 0.25rem; }
+      .profile .status { font-size: 0.875rem; color: #737373; display: flex; align-items: center; }
+      .profile img {
+        height: 4.5rem;
+        width: 4.5rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+        border: 5px solid rgb(139 139 139 / 20%);
+      }
+      .blob {
+        display: inline-block;
+        border-radius: 50%;
+        background: rgba(74, 222, 128, 1);
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 1);
+        height: 0.5rem;
+        width: 0.5rem;
+        margin-right: 0.5rem;
+        transform: scale(1);
+        animation: pulse 2s infinite;
+      }
+      .about .name { display: inline-block; font-weight: 600; }
+      .about h1 { margin-bottom: 1rem; }
+      .about a { border-bottom: 1px solid #ccc; color: #a3a3a3; }
+      .about > p { margin-top: 1rem; color: #a3a3a3; line-height: 1.563rem; }
+      .social { display: flex; margin-top: 1.5rem; margin-left: -0.5rem; }
+      .social a {
+        color: #a3a3a3;
+        display: inline-block;
+        padding: 0.75rem;
+        display: flex;
+        border-radius: 0.813rem;
+        &:hover { background: #171717; }
+      }
+      .social svg {
+        height: 1.125rem;
+        width: 1.125rem;
+        &.resume-icon { padding: 1px; }
+      }
+      .tooltip { position: relative; display: inline-flex; align-items: center; justify-content: center; }
+      .tooltip-text {
+        position: absolute;
+        bottom: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+      .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 5px;
+        border-style: solid;
+        border-color: #333 transparent transparent transparent;
+      }
+      .tooltip:hover .tooltip-text { opacity: 1; transform: translateX(-50%) translateY(-4px); }
+      .projects, .work { margin-top: 2.5rem; font-size: 0.875rem; line-height: 1.25rem; }
+      .projects > h2, .work > h2 { margin-bottom: 0.5rem; color: #a3a3a3; font-weight: 500; }
+      .projects > a, .work > a, .work > div {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem 1rem 0;
+        margin-left: -1rem;
+        border-radius: 0.75rem;
+        &:hover { background: #171717; }
+      }
+      .work > div { &:hover { cursor: not-allowed; } }
+      .projects > a:last-child .info,
+      .work > a:last-child .info,
+      .work > div:last-child .info { border-bottom: none; }
+      .projects .info > div.description,
+      .work .info > div.description { margin-top: 1rem; color: #737373; }
+      .work .logo {
+        height: 2.25rem;
+        width: 2.25rem;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #262626;
+        display: flex;
+        justify-content: center;
+      }
+      .work .logo > p { line-height: 2.25rem; font-weight: 600; color: #a3a3a3; }
+      .work .logo img { width: 100%; height: 100%; }
+      .work .exe-logo { padding: 6px; background: #0e76bc; }
+      .projects .logo img.ais-logo { padding: 0; }
+      .projects .info, .work .info {
+        width: 100%;
+        flex: 1;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #171717;
+      }
+      .projects .info > p, .work .info > p { color: #d4d4d4; margin-top: -0.125rem; line-height: 1.313rem; }
+      .projects .info > div, .work .info > div { display: flex; justify-content: space-between; color: #a3a3a3; }
+      .projects .info > div > div {
+        font-size: 0.75rem;
+        line-height: 1.215rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        border-radius: 0.625rem;
+        background: #262626;
+        height: 1.25rem;
+      }
+      .projects .logo {
+        border-radius: 0.625rem;
+        height: 2.25rem;
+        width: 2.25rem;
+        overflow: hidden;
+        background: #262626;
+        display: flex;
+        justify-content: center;
+      }
+      .projects .logo img { padding: 0.325rem; }
+      .contact { margin-top: 2.5rem; color: #737373; font-size: 0.875rem; line-height: 1.25rem; }
+      .contact a { border-bottom: 1px solid #737373; color: #737373; }
+      @media only screen and (min-width: 48rem) {
+        .container { padding: 5rem 0; }
+      }
+      .animated {
+        -webkit-animation-duration: 0.6s;
+        animation-duration: 0.6s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+      }
+      .animated-1st { animation-delay: 0.1s; -webkit-animation-delay: 0.1s; }
+      .animated-2nd { animation-delay: 0.15s; -webkit-animation-delay: 0.15s; }
+      .animated-3rd { animation-delay: 0.2s; -webkit-animation-delay: 0.2s; }
+      .animated-4th { animation-delay: 0.25s; -webkit-animation-delay: 0.25s; }
+      .animated-5th { animation-delay: 0.3s; -webkit-animation-delay: 0.3s; }
+      .animated-6th { animation-delay: 0.35s; -webkit-animation-delay: 0.35s; }
+      .animated-7th { animation-delay: 0.4s; -webkit-animation-delay: 0.4s; }
+      .animated-8th { animation-delay: 0.45s; -webkit-animation-delay: 0.45s; }
+      .animated-9th { animation-delay: 0.5s; -webkit-animation-delay: 0.5s; }
+      .animated-10th { animation-delay: 0.55s; -webkit-animation-delay: 0.55s; }
+      .animated-11th { animation-delay: 0.6s; -webkit-animation-delay: 0.6s; }
+      @keyframes blackIn {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(0); }
+      }
+      @-webkit-keyframes blackIn {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(0); }
+      }
+      .blackIn { -webkit-animation-name: blackIn; animation-name: blackIn; }
+      @-webkit-keyframes fadeInDown {
+        0% { opacity: 0.01; -webkit-transform: translateY(-0.625rem); }
+        100% { opacity: 1; -webkit-transform: translateY(0); }
+      }
+      @keyframes fadeInDown {
+        0% { opacity: 0.01; transform: translateY(-0.625rem); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .fadeInDown { -webkit-animation-name: fadeInDown; animation-name: fadeInDown; }
+      @-webkit-keyframes fadeInUp {
+        0% { opacity: 0.01; -webkit-transform: translateY(0.625rem); }
+        100% { opacity: 1; -webkit-transform: translateY(0); }
+      }
+      @keyframes fadeInUp {
+        0% { opacity: 0.01; transform: translateY(0.625rem); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .fadeInUp { -webkit-animation-name: fadeInUp; animation-name: fadeInUp; }
+      @-webkit-keyframes fadeInLeft {
+        0% { opacity: 0.01; -webkit-transform: translateX(-0.625rem); }
+        100% { opacity: 1; -webkit-transform: translateX(0); }
+      }
+      @keyframes fadeInLeft {
+        0% { opacity: 0.01; transform: translateX(-0.625rem); }
+        100% { opacity: 1; transform: translateX(0); }
+      }
+      .fadeInLeft { -webkit-animation-name: fadeInLeft; animation-name: fadeInLeft; }
+      @-webkit-keyframes fadeInRight {
+        0% { opacity: 0.01; -webkit-transform: translateX(0.625rem); }
+        100% { opacity: 1; -webkit-transform: translateX(0); }
+      }
+      @keyframes fadeInRight {
+        0% { opacity: 0.01; transform: translateX(0.625rem); }
+        100% { opacity: 1; transform: translateX(0); }
+      }
+      .fadeInRight { -webkit-animation-name: fadeInRight; animation-name: fadeInRight; }
+      @keyframes pulse {
+        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+        70% { transform: scale(1); box-shadow: 0 0 0 0.625rem rgba(74, 222, 128, 0); }
+        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -66,7 +334,7 @@
           </svg>
           <span class="tooltip-text">Email</span>
         </a>
-        <a href="./Resume.pdf" target="_blank" aria-label="Resume" class="tooltip">
+        <a href="./Vuong_Tran_Senior_Frontend_Engineer.pdf" target="_blank" aria-label="Resume" class="tooltip">
           <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none" class="resume-icon">
             <path
               d="M4 4V20C4 21.1046 4.89543 22 6 22L18 22C19.1046 22 20 21.1046 20 20V8.34162C20 7.8034 19.7831 7.28789 19.3982 6.91161L14.9579 2.56999C14.5842 2.20459 14.0824 2 13.5597 2L6 2C4.89543 2 4 2.89543 4 4Z"
@@ -90,7 +358,7 @@
             <p>AnyMind</p>
             <div>
               <p>Front End Engineer</p>
-              <p>2017 - Now</p>
+              <p>2017 - Present</p>
             </div>
           </div>
         </a>
